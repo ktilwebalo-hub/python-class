@@ -2,16 +2,15 @@
 # the same sentence where words longer than 4 characters have their vowels removed.
 def shorten_long_words(sentence):
     sent_ = sentence.split(" ")
-    str_ =[]
-    vowels = "aeiou"
+    ans = []
     for i in sent_:
         if len(i) <= 4:
-            str_.append(i)
+            ans.append(i)
         else:
             word = remove_vowels(i)
-            str_.append(word)
+            ans.append(word)
             
-    return " ".join(str_)
+    return " ".join(ans)
     
 def remove_vowels(s):
     str = ""
@@ -21,6 +20,7 @@ def remove_vowels(s):
         char = s[i]
         if char not in vowels:
             str += char
+    return str
             
 # Example usage:
 print(shorten_long_words("they are very noble people"))  # 'they are very nbl ppl'
